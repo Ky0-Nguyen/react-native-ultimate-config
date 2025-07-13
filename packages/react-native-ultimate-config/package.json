@@ -72,5 +72,15 @@
   "resolutions": {
     "logkitty": "^0.7.1",
     "lodash": "^4.17.19"
+  },
+  "codegenConfig": {
+    "name": "RNUltimateConfig",
+    "type": "modules",
+    "jsSrcsDir": "node_modules/react-native-ultimate-config/src",
+    "ios": {
+      "modulesConformingToProtocol": {
+        "NativeUltimateConfigSpec": ["RNUltimateConfig"]
+      }
+    }
   }
 }

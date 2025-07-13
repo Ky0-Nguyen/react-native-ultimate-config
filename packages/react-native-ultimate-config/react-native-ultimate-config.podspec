@@ -12,23 +12,25 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/maxkomarychev/react-native-ultimate-config"
   s.license      = "MIT"
-  # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
   s.authors      = { "Your Name" => "maxkomarychev@gmail.com" }
   s.platforms    = { :ios => "11.0" }
   s.source       = { :git => "https://github.com/maxkomarychev/react-native-ultimate-config.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}"
-
   s.dependency "React-Core"
 
-  # Don't install the dependencies when we run `pod install` in the old architecture.
-  if ENV['RCT_NEW_ARCH_ENABLED'] == '1' then
+  if ENV['RCT_NEW_ARCH_ENABLED'] == '1'
     s.compiler_flags = folly_compiler_flags + " -DRCT_NEW_ARCH_ENABLED=1"
-    s.pod_target_xcconfig    = {
-        "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\"",
-        "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
-        "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
+    s.pod_target_xcconfig = {
+      "HEADER_SEARCH_PATHS" => "\"$(PODS_ROOT)/boost\" \
+                                \"$(PODS_ROOT)/Headers/Public/React-Codegen\" \
+                                \"$(PODS_ROOT)/React-Codegen\" \
+                                \"$(PODS_ROOT)/ReactCommon\" \
+                                \"$(PODS_TARGET_SRCROOT)/build/generated/ios\"",
+      "OTHER_CPLUSPLUSFLAGS" => folly_compiler_flags,
+      "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
     }
+
     s.dependency "React-Codegen"
     s.dependency "RCT-Folly"
     s.dependency "RCTRequired"
