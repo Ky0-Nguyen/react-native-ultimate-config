@@ -1,12 +1,38 @@
 # react-native-ultimate-config
 
-_Config that works_
+_Config that works - Fork for direct GitHub usage_
 
 [![NPM](https://img.shields.io/npm/l/react-native-ultimate-config)](https://www.npmjs.com/package/react-native-ultimate-config)
 [![npm](https://img.shields.io/npm/v/react-native-ultimate-config?color=green&label=version)](https://www.npmjs.com/package/react-native-ultimate-config)
 [![npm](https://img.shields.io/npm/dw/react-native-ultimate-config?color=green)](https://www.npmjs.com/package/react-native-ultimate-config)
 
 _Project generated with https://github.com/brodybits/create-react-native-module_
+
+## 🚀 Installation from GitHub
+
+This is a fork of `react-native-ultimate-config` that can be installed directly from GitHub.
+
+### Option 1: Install from GitHub (Recommended)
+
+```bash
+npm install git+https://github.com/tan4194/react-native-ultimate-config.git
+```
+
+### Option 2: Install with specific branch/tag
+
+```bash
+npm install git+https://github.com/tan4194/react-native-ultimate-config.git#main
+```
+
+### Option 3: Add to package.json
+
+```json
+{
+  "dependencies": {
+    "react-native-ultimate-config": "git+https://github.com/tan4194/react-native-ultimate-config.git"
+  }
+}
+```
 
 ## Suport of gradle
 
@@ -17,15 +43,15 @@ _Project generated with https://github.com/brodybits/create-react-native-module_
 
 ## TL;DR usage
 
-1. install
-   |npm | yarn |
-   |-|-|
-   |`npm install react-native-ultimate-config` | `yarn add react-native-ultimate-config`|
+1. install from GitHub
+   ```bash
+   npm install git+https://github.com/tan4194/react-native-ultimate-config.git
+   ```
 2. [one-off setup for native projects](./docs/quickstart.md)
 3. initialize env
-   |npm | yarn |
-   |-|-|
-   |`npm run rnuc <env file>`|`yarn rnuc <env file>`|
+   ```bash
+   npm run rnuc <env file>
+   ```
 4. build! `react-native run-{ios,android}`
 
 ## ☝❗Approach to versioning and breaking changes

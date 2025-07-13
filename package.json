@@ -1,6 +1,22 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "react-native-ultimate-config",
+  "title": "React Native Ultimate Config",
+  "version": "0.0.1",
+  "description": "Config that works - Fork for direct GitHub usage",
+  "main": "packages/react-native-ultimate-config/index.js",
+  "react-native": "packages/react-native-ultimate-config/index.js",
+  "browser": "packages/react-native-ultimate-config/index.web.js",
+  "files": [
+    "packages/react-native-ultimate-config/src/*.js",
+    "packages/react-native-ultimate-config/src/templates",
+    "packages/react-native-ultimate-config/ios/UltimateConfig.{h,m}",
+    "packages/react-native-ultimate-config/ios/ConfigValues.h",
+    "packages/react-native-ultimate-config/ios/UltimateConfig.xcodeproj/project.pbxproj",
+    "packages/react-native-ultimate-config/android/src",
+    "packages/react-native-ultimate-config/android/build.gradle",
+    "packages/react-native-ultimate-config/android/rnuc.gradle",
+    "packages/react-native-ultimate-config/react-native-ultimate-config.podspec"
+  ],
   "scripts": {
     "test": "lerna run --scope=react-native-ultimate-config test",
     "pods": "lerna exec --scope=example '(cd ios; pod install)'",
@@ -10,9 +26,71 @@
     "example:android": "lerna run --scope=example android",
     "example:web:env": "lerna run --scope=example-web rnuc -- .env",
     "example:web:start": "lerna run --scope=example-web start",
-    "version": "cd packages/react-native-ultimate-config; npx standard-version"
+    "version": "cd packages/react-native-ultimate-config; npx standard-version",
+    "rnuc": "node packages/react-native-ultimate-config/bin.js",
+    "postinstall": "echo 'React Native Ultimate Config installed from GitHub. Use: npm run rnuc <env-file>'"
+  },
+  "bin": {
+    "rnuc": "./packages/react-native-ultimate-config/bin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tan4194/react-native-ultimate-config.git",
+    "baseUrl": "https://github.com/tan4194/react-native-ultimate-config"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "12factor",
+    "12factorapp",
+    "dotenv",
+    "env",
+    "environment",
+    "config",
+    "xcconfig",
+    "gradle",
+    "objective-c",
+    "java",
+    "typescript"
+  ],
+  "author": {
+    "name": "Max Komarychev",
+    "email": "maxkomarychev@gmail.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "jest": "^26",
+    "react": "^18.2.0",
+    "react-native": "0.71.0"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16",
+    "handlebars": "^4.7.7",
+    "js-yaml": "^4",
+    "yargs": "^17"
+  },
+  "resolutions": {
+    "logkitty": "^0.7.1",
+    "lodash": "^4.17.19"
+  },
+  "codegenConfig": {
+    "name": "RNUltimateConfig",
+    "type": "modules",
+    "jsSrcsDir": "node_modules/react-native-ultimate-config/src",
+    "ios": {
+      "modulesConformingToProtocol": {
+        "NativeUltimateConfigSpec": ["RNUltimateConfig"]
+      }
+    }
   }
 }
