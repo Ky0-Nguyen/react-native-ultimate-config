@@ -2,7 +2,7 @@
   "name": "react-native-ultimate-config",
   "title": "React Native Ultimate Config",
   "version": "0.0.1",
-  "description": "Config that works",
+  "description": "Config that works - Fork for direct GitHub usage",
   "main": "index.js",
   "react-native": "index.js",
   "browser": "index.web.js",
@@ -19,15 +19,17 @@
   ],
   "scripts": {
     "test": "jest",
-    "prepack": "echo '#error \"invoke bin.js with env file before compiling native project\"' > ios/ConfigValues.h"
+    "prepack": "echo '#error \"invoke bin.js with env file before compiling native project\"' > ios/ConfigValues.h",
+    "rnuc": "node bin.js",
+    "postinstall": "echo 'React Native Ultimate Config installed from GitHub. Use: npm run rnuc <env-file>'"
   },
   "bin": {
     "rnuc": "./bin.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxkomarychev/react-native-ultimate-config.git",
-    "baseUrl": "https://github.com/maxkomarychev/react-native-ultimate-config"
+    "url": "git+https://github.com/Ky0-Nguyen/react-native-ultimate-config",
+    "baseUrl": "https://github.com/Ky0-Nguyen/react-native-ultimate-config"
   },
   "keywords": [
     "react-native",
